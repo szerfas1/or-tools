@@ -482,6 +482,7 @@ build_cbc: dependencies/install/lib/libCbc.$L
 CBC_SRCDIR = dependencies/sources/Cbc-$(CBC_TAG)
 dependencies/install/lib/libCbc.$L: build_cgl $(CBC_SRCDIR) $(PATCHELF)
 	cd $(CBC_SRCDIR) && $(SET_COMPILER) ./configure \
+    --build=unknown-unknown-linux \
     --prefix=$(OR_ROOT_FULL)/dependencies/install \
     --disable-debug \
     --without-blas \
@@ -553,6 +554,7 @@ build_cgl: dependencies/install/lib/libCgl.$L
 CGL_SRCDIR = dependencies/sources/Cgl-$(CGL_TAG)
 dependencies/install/lib/libCgl.$L: build_clp $(CGL_SRCDIR) $(PATCHELF)
 	cd $(CGL_SRCDIR) && $(SET_COMPILER) ./configure \
+    --build=unknown-unknown-linux \
     --prefix=$(OR_ROOT_FULL)/dependencies/install \
     --disable-debug \
     --without-blas \
@@ -597,6 +599,7 @@ build_clp: dependencies/install/lib/libClp.$L
 CLP_SRCDIR = dependencies/sources/Clp-$(CLP_TAG)
 dependencies/install/lib/libClp.$L: build_osi $(CLP_SRCDIR) $(PATCHELF)
 	cd $(CLP_SRCDIR) && $(SET_COMPILER) ./configure \
+    --build=unknown-unknown-linux \
     --prefix=$(OR_ROOT_FULL)/dependencies/install \
     --disable-debug \
     --without-blas \
@@ -667,6 +670,7 @@ build_osi: dependencies/install/lib/libOsi.$L
 OSI_SRCDIR = dependencies/sources/Osi-$(OSI_TAG)
 dependencies/install/lib/libOsi.$L: build_coinutils $(OSI_SRCDIR) $(PATCHELF)
 	cd $(OSI_SRCDIR) && $(SET_COMPILER) ./configure \
+    --build=unknown-unknown-linux \
     --prefix=$(OR_ROOT_FULL)/dependencies/install \
     --disable-debug \
     --without-blas \
@@ -721,6 +725,7 @@ COINUTILS_SRCDIR = dependencies/sources/CoinUtils-$(COINUTILS_TAG)
 dependencies/install/lib/libCoinUtils.$L: $(COINUTILS_SRCDIR) $(PATCHELF) | \
  dependencies/install/lib/pkgconfig dependencies/install/include/coin
 	cd $(COINUTILS_SRCDIR) && $(SET_COMPILER) ./configure \
+    --build=unknown-unknown-linux \
     --prefix=$(OR_ROOT_FULL)/dependencies/install \
     --disable-debug \
     --without-blas \
